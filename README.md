@@ -24,4 +24,17 @@ final Person person = PersonBuilder.aPerson()
 				.build();
 ```
 
-See `PersonBuilderTest` for testing purposes.
+See `PersonBuilderTest` for using & testing purposes.
+
+### 2. Strategy pattern
+`SalaryStrategy` is a interface that better illustrates the strategy pattern using functional interfaces. The value added by this implementation is that you don't have to make any implementation classes (or anonymous inner classes) for each strategy defined, you just use lambda expressions to pass the actual behaviour.
+
+How to use:
+```
+final Employee employee = new Employee("Liviu Cotoarba", 100d)
+final SalaryStrategy doubleSalaryStrategy = e -> e.setSalary(2 * e.getSalary());
+
+doubleSalaryStrategy.increaseSalary(employee);
+```
+
+See `SalaryStrategyTest` for using & testing purposes.
